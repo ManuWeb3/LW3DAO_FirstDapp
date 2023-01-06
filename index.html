@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First dApp</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div {
+            width: 30%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            width: 100%;
+            margin: 10px 0px 5px 0px;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+        <h1>This is my dApp!</h1>
+        <p>Here we can set or get the mood:</p>
+        <label for="mood">Input Mood:</label> <br />
+        <input type="text" id="mood" />
+        <button onclick="setMood()">Set Mood</button> <br> <br>
+        <button onclick="getMood()">Get Mood</button>
+    </div>
+  </body>
+    <script>
+        src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"
+    </script>
+    <script>
+        const MoodContractAddress = "0x34050dE1Ca01b626D3Ec512CfF0D9Fd68DA1BF11";
+        const MoodContractABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_mood",
+				"type": "string"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "get",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "mood",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+        let MoodContract;
+        let signer;
+        const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
+        
+    </script>
+</html>
